@@ -30,7 +30,7 @@ Gunakan flag `--skill <nama-skill>` untuk memilih skill spesifik yang Anda butuh
 
 ```bash
 # Skill Open Knowledge Format (OKF) & validasi okflint
-npx skills add narr07/skills --skill okf-open-knowledge-format
+npx skills add narr07/skills --skill okf
 
 # Skill Anti-Kaku (Gaya Bahasa Indonesia Natural)
 npx skills add narr07/skills --skill anti-kaku
@@ -73,7 +73,7 @@ npx skills add narr07/skills --list
 
 | Skill | Deskripsi Singkat | Fokus Utama |
 | :--- | :--- | :--- |
-| [**`okf-open-knowledge-format`**](./okf-open-knowledge-format/) | Pembuatan, konversi, dan validasi bundle Open Knowledge Format (OKF v0.2) lengkap dengan `okflint`. | Manifest `okf-base.yaml`, GitHub Action CI, Attested Computations, provenance `sources`. |
+| [**`okf`**](./okf/) | Pembuatan, konversi, dan validasi bundle Open Knowledge Format (OKF v0.2) lengkap dengan `okflint`. | Manifest `okf-base.yaml`, GitHub Action CI, Attested Computations, provenance `sources`. |
 | [**`anti-kaku`**](./anti-kaku/) | Menghilangkan gaya bahasa birokratis/proposal/AI pada teks Bahasa Indonesia. | Natural tone, human-sounding, active voice. |
 | [**`artikelgen`**](./artikelgen/) | Generator artikel blog SEO bilingual (ID & EN) berbasis Google Trends & TF-IDF. | Dual-output ID & EN, Nuxt Content MDC, flat design visuals. |
 | [**`translate-id-en`**](./translate-id-en/) | Terjemahan dwiarah ID ↔ EN anti-slop yang terdengar seperti penutur asli. | Idiomatis, akurat, anti-terjemahan harfiah. |
@@ -82,13 +82,13 @@ npx skills add narr07/skills --list
 
 ### 🔍 Ringkasan Tiap Skill
 
-### 1. [`okf-open-knowledge-format`](./okf-open-knowledge-format/SKILL.md)
+### 1. [`okf`](./okf/SKILL.md)
 *Membangun dan memvalidasi basis pengetahuan berformat Open Knowledge Format (OKF v0.2) untuk agen AI.*
 - **Kapan Digunakan**: Mengorganisir dokumentasi/pengetahuan ke dalam markdown dengan frontmatter YAML terstandar, membuat wiki agen (*LLM Wiki*), memvalidasi bundle dengan linter `okflint`, atau menyiapkan metadata as code.
 - **Validasi Linting Terintegrasi (`okflint`)**:
   - Otomatis menyertakan manifest linter `okf-base.yaml` (tipe konsep, field wajib/opsional, status, dan aturan hygiene).
   - Otomatis menyertakan workflow GitHub Actions CI `.github/workflows/okflint.yml` (`okflint validate-manifest`, `okflint validate`, dan `okflint audit`).
-- **Contoh Nyata**: Dilengkapi studi kasus bundle produksi lengkap di [`examples/majalengka-design-system/`](./okf-open-knowledge-format/examples/majalengka-design-system/) (Design System Majalengka.tech).
+- **Contoh Nyata**: Dilengkapi studi kasus bundle produksi lengkap di [`examples/majalengka-design-system/`](./okf/examples/majalengka-design-system/) (Design System Majalengka.tech).
 
 ### 2. [`anti-kaku`](./anti-kaku/SKILL.md)
 *Mendeteksi dan merombak kalimat kaku menjadi tulisan yang enak dibaca.*
@@ -111,7 +111,7 @@ npx skills add narr07/skills --list
 
 ```text
 skills/
-├── okf-open-knowledge-format/
+├── okf/
 │   ├── examples/
 │   │   └── majalengka-design-system/
 │   │       ├── .github/workflows/okflint.yml
@@ -136,10 +136,6 @@ skills/
 │   └── SKILL.md
 ├── translate-id-en/
 │   └── SKILL.md
-├── majalengka-design-system/       # Folder bundle referensi
-│   ├── .github/workflows/okflint.yml
-│   ├── okf-base.yaml
-│   └── ...
 ├── bin/
 │   └── cli.mjs
 ├── .gitignore

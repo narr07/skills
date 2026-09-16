@@ -1,5 +1,5 @@
 ---
-name: okf-open-knowledge-format
+name: okf
 description: >
   Create, validate, and enrich Open Knowledge Format (OKF) bundles — the open
   spec for representing organizational knowledge as markdown files with YAML
@@ -13,13 +13,14 @@ description: >
   folder OKF conformant' — the skill has critical structural rules the agent
   needs.
 metadata:
-  author: ft.ia.br
-  version: "2.0"
-  date: 2026-08-25
-  repository: https://github.com/fabricioctelles/skills
-  license: Apache-2.0
+  author: narr07
+  version: "2.1"
+  date: 2026-09-17
+  repository: https://github.com/narr07/skills
+  license: MIT
   category: library-and-api-reference
   upstream: https://github.com/GoogleCloudPlatform/open-knowledge-format
+license: MIT
 ---
 
 # Open Knowledge Format (OKF)
