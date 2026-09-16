@@ -1,0 +1,39 @@
+{
+	"name": "@narr07/skills",
+	"version": "1.0.0",
+	"description": "Koleksi AI Agent Skills pilihan: anti-kaku, artikelgen, translate-id-en, dan en-artikelgen.",
+	"type": "module",
+	"bin": {
+		"narr07-skills": "./bin/cli.mjs"
+	},
+	"files": [
+		"anti-kaku",
+		"artikelgen",
+		"en-artikelgen",
+		"translate-id-en",
+		"bin",
+		"README.md",
+		"LICENSE"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/narr07/skills.git"
+	},
+	"keywords": [
+		"skills",
+		"agent-skills",
+		"antigravity",
+		"claude-code",
+		"cursor",
+		"anti-kaku",
+		"artikelgen",
+		"translate-id-en",
+		"ai-skills"
+	],
+	"author": "narr07",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/narr07/skills/issues"
+	},
+	"homepage": "https://github.com/narr07/skills#readme"
+}
