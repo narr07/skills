@@ -1,6 +1,12 @@
 ---
 name: artikelgen
 description: Generator artikel blog SEO-driven bernada manusiawi otentik (Anti-AI Tone & Anti-Slop) berbasis Google Trends & TF-IDF Optimization, penerjemah bilingual ID-EN dengan proteksi sintaks MDC Nuxt Content, dan generator visual ilustrasi flat design dengan palet brand teal/emerald (#14b898). Otomatis menghasilkan 2 file .md siap copas (versi Bahasa Indonesia & Bahasa Inggris) lengkap dengan saran path file dan frontmatter baku. Kompatibel penuh dengan Gemini Spark dan IDE.
+metadata:
+  author: narr07
+  version: "1.0.0"
+  date: 2026-09-17
+  repository: https://github.com/narr07/skills
+  license: MIT
 license: MIT
 ---
 

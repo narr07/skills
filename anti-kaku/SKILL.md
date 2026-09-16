@@ -1,6 +1,12 @@
 ---
 name: anti-kaku
 description: Menulis atau menyunting dokumentasi, blog post, copy website, halaman landing, README, atau konten apa pun berbahasa Indonesia agar TIDAK terdengar kaku/birokratis/seperti proposal-hibah. Gunakan skill ini setiap kali user meminta menulis atau memperbaiki teks berbahasa Indonesia untuk website, dokumentasi, artikel, landing page, deskripsi produk/proyek, atau bertanya "ini kaku ga?" / "kedengeran natural ga?" / "kok kayak AI?" — bahkan jika user tidak menyebut kata "kaku" secara eksplisit, misalnya cukup bilang "tolong tulisin", "bikinin copy", atau "review tulisan ini". Wajib dipakai juga saat menyunting draft yang sudah ada, bukan cuma menulis dari nol.
+metadata:
+  author: narr07
+  version: "1.0.0"
+  date: 2026-09-17
+  repository: https://github.com/narr07/skills
+  license: MIT
 license: MIT
 ---
 

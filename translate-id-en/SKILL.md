@@ -11,6 +11,12 @@ description: >
   juga ketika mengevaluasi/memperbaiki teks ID atau EN yang terasa aneh, kaku, atau
   seperti hasil Google Translate — bahkan jika pengguna tidak minta terjemahan baru,
   hanya minta perbaikan nada bahasa pada teks yang sudah diterjemahkan.
+metadata:
+  author: narr07
+  version: "1.0.0"
+  date: 2026-09-17
+  repository: https://github.com/narr07/skills
+  license: MIT
 license: MIT
 ---
 

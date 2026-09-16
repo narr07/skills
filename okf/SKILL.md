@@ -14,7 +14,7 @@ description: >
   needs.
 metadata:
   author: narr07
-  version: "2.1"
+  version: "1.0.0"
   date: 2026-09-17
   repository: https://github.com/narr07/skills
   license: MIT
