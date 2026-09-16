@@ -1,7 +1,7 @@
 {
 	"name": "@narr07/skills",
-	"version": "1.0.0",
-	"description": "Koleksi AI Agent Skills pilihan: anti-kaku, artikelgen, translate-id-en, dan en-artikelgen.",
+	"version": "1.1.0",
+	"description": "Koleksi AI Agent Skills pilihan: anti-kaku, artikelgen, translate-id-en, dan okf-open-knowledge-format (dengan integrasi okflint).",
 	"type": "module",
 	"bin": {
 		"narr07-skills": "./bin/cli.mjs"
@@ -9,8 +9,9 @@
 	"files": [
 		"anti-kaku",
 		"artikelgen",
-		"en-artikelgen",
 		"translate-id-en",
+		"okf-open-knowledge-format",
+		"majalengka-design-system",
 		"bin",
 		"README.md",
 		"LICENSE"
@@ -28,6 +29,9 @@
 		"anti-kaku",
 		"artikelgen",
 		"translate-id-en",
+		"okf",
+		"open-knowledge-format",
+		"okflint",
 		"ai-skills"
 	],
 	"author": "narr07",
