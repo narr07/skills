@@ -95,6 +95,10 @@ Setiap artikel yang dihasilkan **WAJIB MEMATUHI BATASAN JUMLAH KARAKTER & KATA**
   * **Minimal**: **10 karakter**.
   * **Maksimal**: **125 karakter atau kurang**.
   * *Alasan*: Pembaca layar (*screen reader*) untuk aksesibilitas dan *crawler* gambar Google memprioritaskan deskripsi ringkas, informatif, dan padat di bawah 125 karakter.
+* **Panjang Total Artikel**:
+  * **Minimal**: **1500 kata**.
+  * **Target**: **1500–2000 kata** per artikel (hitung isi body saja, di luar frontmatter).
+  * *Alasan*: Standar `SEO-SKILL.md` proyek ini eksplisit meminta kedalaman 1500–2000 kata untuk melawan *thin content* dan membangun otoritas topikal. Jangan berhenti di draf pendek hanya karena batasan per-paragraf di atas sudah terasa "cukup" — batasan per-elemen itu soal kepadatan tiap bagian, bukan pengganti kedalaman keseluruhan artikel.
 
 ### Rangkuman Ringkas Batasan Karakter & Kata
 
@@ -108,6 +112,7 @@ Setiap artikel yang dihasilkan **WAJIB MEMATUHI BATASAN JUMLAH KARAKTER & KATA**
 | **Jawaban Snippet (BLUF)** | 40 kata (~250 kar) | 60 kata (~400 kar) |
 | **Paragraf Biasa** | 1 kalimat (~50–100 kar) | 2–4 kalimat (< 5 baris seluler) |
 | **Image Alt Text** | 10 karakter | 125 karakter |
+| **Total Artikel (Body)** | 1500 kata | 1500–2000 kata |
 
 ---
 
@@ -176,6 +181,8 @@ Setiap file `.md` (baik ID maupun EN) **WAJIB** memiliki komponen berikut secara
 ### A. Frontmatter YAML Baku & Batasan Karakter
 * **`title` (Format & Panjang Judul)**: **MINIMAL 50 & MAKSIMAL 50–58 KARAKTER** (*Total dengan suffix site ` \| Permadi` tidak boleh melebihi 70 karakter dengan spasi / ~550 px*). Wajib memuat Primary Keyword.
 * **HINDARI TANDA TITIK DUA (`:`) PADA JUDUL**: Dilarang menggunakan pola klise formula AI `Topik: Subtopik`. Buatlah judul yang mengalir alami (*fluid natural headline*) tanpa tanda titik dua (`:`), kecuali jika benar-benar mutlak dibutuhkan.
+* **`category`**: **WAJIB salah satu dari tiga nilai enum ini, persis huruf kecilnya, TIDAK BOLEH bebas teks**: `edu` (pendidikan), `tech` (teknologi), `art` (seni/desain). Dikonfirmasi langsung dari `content.config.ts` (`z.enum(['edu', 'tech', 'art'])`) — nilai lain (`desain`, `pendidikan`, `education`, `technology`, dll.) akan gagal validasi Zod saat build Nuxt Content.
+* **`date`**: Tanggal publikasi asli (hari ini, kecuali diminta lain), format `YYYY-MM-DD` **tanpa tanda kutip** (mis. `date: 2026-09-19`). Jangan pernah menulis literal teks `YYYY-MM-DD` ke file sungguhan — itu cuma penanda format di sini, bukan nilai yang sah.
 * **`description`**: **MINIMAL 70 KARAKTER, AMAN SELULER 105 KARAKTER, HINGGA 135–160 KARAKTER (DESKTOP)**. Natural, to the point, memuat primary keyword + 1 secondary keyword tanpa kata klise robot.
 * **URL Slug**: **10–40 KARAKTER** (< 5 kata, optimal 21–25 karakter) demi sitasi optimal mesin AI (AEO/GEO).
 * **`tags`**: 3–5 target keyword yang seluruhnya akan dipakai di teks body artikel.
@@ -183,8 +190,8 @@ Setiap file `.md` (baik ID maupun EN) **WAJIB** memiliki komponen berikut secara
 ```yaml
 ---
 title: "Panduan Memilih Gaya Desain Grafis dan UI Modern" # Alami tanpa titik dua, 50-58 karakter (total <= 70)
-category: desain
-date: YYYY-MM-DD
+category: art # HANYA edu | tech | art -- lihat content.config.ts
+date: 2026-09-19 # tanggal asli, YYYY-MM-DD tanpa kutip
 description: Panduan memilih gaya desain grafis dan UI modern untuk estetika web yang fungsional dan berkarakter. # 70-105 kar (seluler) / 135-160 (desktop)
 tags:
   - primary-keyword
@@ -223,8 +230,8 @@ Contoh format jawaban yang harus selalu disajikan ke pengguna:
 ~~~~md
 ---
 title: "Panduan Praktis Memilih Metode Belajar Efektif"
-category: pendidikan
-date: YYYY-MM-DD
+category: edu
+date: 2026-09-19
 description: Panduan komprehensif memilih metode belajar dan strategi pedagogi untuk meningkatkan efektivitas kelas secara nyata di lapangan.
 tags:
   - metode-belajar
@@ -275,8 +282,6 @@ Tidak ada satu metode belajar yang sempurna untuk semua kondisi kelas:
 - **Pilih Metode Inkuiri**: Jika target Anda adalah melatih daya nalar kritis dan pemecahan masalah kolaboratif.
 ::
 
-
-
 ::faq
 ::faq-item{question="Mengapa metode belajar interaktif sering gagal di kelas besar?"}
 Penyebab utamanya adalah lemahnya manajemen waktu dan tidak adanya pembagian peran yang jelas di setiap kelompok kecil.
@@ -295,8 +300,8 @@ Gunakan tiket keluar (*exit ticket*) 3 menit di akhir pelajaran berisi satu pert
 ~~~~md
 ---
 title: "Practical Guide to Effective Learning Methods"
-category: education
-date: YYYY-MM-DD
+category: edu
+date: 2026-09-19
 description: A practical guide to choosing active learning methods and pedagogy frameworks to improve classroom effectiveness in real-world teaching.
 tags:
   - learning-methods
@@ -346,7 +351,6 @@ No single instructional framework fits every classroom constraint:
 - **Choose Demonstration**: When tight curriculum schedules demand rapid conceptual clarity.
 - **Choose Inquiry-Based**: When developing collaborative problem-solving matters more than raw speed.
 ::
-
 
 ::faq
 ::faq-item{question="Why do active learning methods struggle in large classes?"}
