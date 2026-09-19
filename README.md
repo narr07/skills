@@ -77,6 +77,9 @@ npx skills add narr07/skills --list
 | [**`anti-kaku`**](./anti-kaku/) | Menghilangkan gaya bahasa birokratis/proposal/AI pada teks Bahasa Indonesia. | Natural tone, human-sounding, active voice. |
 | [**`artikelgen`**](./artikelgen/) | Generator artikel blog SEO bilingual (ID & EN) berbasis Google Trends & TF-IDF. | Dual-output ID & EN, Nuxt Content MDC, flat design visuals. |
 | [**`translate-id-en`**](./translate-id-en/) | Terjemahan dwiarah ID ↔ EN anti-slop yang terdengar seperti penutur asli. | Idiomatis, akurat, anti-terjemahan harfiah. |
+| [**`tgrep-skill`**](./tgrep-skill/) | Wrapper pencarian teks/kode super cepat berbasis trigram index (`microsoft/tgrep`), pengganti grep/ripgrep di Windows. | Server/index otomatis lewat `scripts/tsearch.ps1`, fallback grep hanya darurat. |
+| [**`obscura-windows`**](./obscura-windows/) | Otomasi browser headless (`h4ckf0r0day/obscura`) di Windows: scraping, screenshot, CDP, dan MCP tools. | Stealth mode default, setup tanpa admin, batas otorisasi akun/login. |
+| [**`pdf-inspector-windows`**](./pdf-inspector-windows/) | Konversi PDF ke Markdown (`firecrawl/pdf-inspector`), termasuk OCR lokal gratis untuk PDF hasil scan. | Cepat & akurat untuk heading/tabel, OCR 100% lokal via PP-OCRv6, tidak ada dokumen yang dikirim ke layanan luar. |
 
 ---
 
@@ -104,6 +107,21 @@ npx skills add narr07/skills --list
 *Alih bahasa dua arah ID ↔ EN tanpa aroma terjemahan mesin.*
 - **Kapan Digunakan**: Menerjemahkan UI string, dokumentasi, artikel, landing page, atau pitch deck antara Bahasa Indonesia dan Bahasa Inggris.
 - **Kunci**: Menghindari frasa kaku hasil alih bahasa harfiah (mis. *"dalam rangka"* → *"in order to facilitate the realization of"* diubah menjadi gaya bahasa natural).
+
+### 5. [`tgrep-skill`](./tgrep-skill/SKILL.md)
+*Pencarian teks/kode berbasis trigram index, pengganti grep/ripgrep di Windows.*
+- **Kapan Digunakan**: Mencari string/fungsi/TODO di repo Windows besar, atau saat user bilang "cari X di project ini" tanpa menyebut nama tool.
+- **Kunci**: `scripts/tsearch.ps1` otomatis mengurus server & index (`microsoft/tgrep`); grep/ripgrep biasa hanya untuk fallback darurat.
+
+### 6. [`obscura-windows`](./obscura-windows/SKILL.md)
+*Otomasi browser headless untuk scraping dan rendering JS di Windows.*
+- **Kapan Digunakan**: Scrape halaman berat JS, screenshot/PDF halaman, atau menjalankan agent lewat MCP `browser_*` tools.
+- **Kunci**: Stealth/anti-detection (`h4ckf0r0day/obscura`) aktif default, instalasi tanpa admin, dengan batas eksplisit: tidak untuk membobol akun/login orang lain.
+
+### 7. [`pdf-inspector-windows`](./pdf-inspector-windows/SKILL.md)
+*Konversi PDF ke Markdown, termasuk PDF hasil scan, tanpa cloud.*
+- **Kapan Digunakan**: Membaca/menganalisis PDF apa pun (teks biasa maupun hasil scan) untuk LLM/RAG.
+- **Kunci**: OCR lokal gratis via PP-OCRv6 (`firecrawl/pdf-inspector`) - terverifikasi lebih cepat dan lebih akurat struktur heading/tabelnya dibanding MarkItDown; dokumen tidak pernah dikirim ke layanan luar, berbeda dari opsi OCR berbayar/cloud pada MarkItDown maupun anydoc.
 
 ---
 
@@ -135,6 +153,31 @@ skills/
 │   │   └── trends.mjs
 │   └── SKILL.md
 ├── translate-id-en/
+│   └── SKILL.md
+├── tgrep-skill/
+│   ├── references/
+│   │   └── full-flags.md
+│   ├── scripts/
+│   │   ├── install-tgrep.ps1
+│   │   ├── start-tgrep-server.ps1
+│   │   └── tsearch.ps1
+│   └── SKILL.md
+├── obscura-windows/
+│   ├── references/
+│   │   ├── cli-and-cdp.md
+│   │   └── mcp-tools.md
+│   ├── scripts/
+│   │   ├── run-server.ps1
+│   │   └── setup_windows.ps1
+│   └── SKILL.md
+├── pdf-inspector-windows/
+│   ├── references/
+│   │   ├── api-and-cli.md
+│   │   ├── comparison.md
+│   │   └── ocr-runtime-setup.md
+│   ├── scripts/
+│   │   ├── read_pdf.py
+│   │   └── setup_windows.ps1
 │   └── SKILL.md
 ├── bin/
 │   └── cli.mjs

@@ -1,7 +1,7 @@
 {
 	"name": "@narr07/skills",
 	"version": "1.0.0",
-	"description": "Koleksi AI Agent Skills pilihan: anti-kaku, artikelgen, translate-id-en, dan okf (dengan integrasi okflint).",
+	"description": "Koleksi AI Agent Skills pilihan: anti-kaku, artikelgen, translate-id-en, okf (dengan integrasi okflint), tgrep-skill, obscura-windows, dan pdf-inspector-windows.",
 	"type": "module",
 	"bin": {
 		"narr07-skills": "./bin/cli.mjs"
@@ -11,6 +11,9 @@
 		"artikelgen",
 		"translate-id-en",
 		"okf",
+		"tgrep-skill",
+		"obscura-windows",
+		"pdf-inspector-windows",
 		"bin",
 		"README.md",
 		"LICENSE"
@@ -31,6 +34,9 @@
 		"okf",
 		"open-knowledge-format",
 		"okflint",
+		"tgrep-skill",
+		"obscura-windows",
+		"pdf-inspector-windows",
 		"ai-skills"
 	],
 	"author": "narr07",
